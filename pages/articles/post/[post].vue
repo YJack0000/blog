@@ -2,8 +2,8 @@
     <div>
         <div class="text-sm breadcrumbs">
             <ul>
-                <li><NuxtLink to="/">Main page</NuxtLink></li>
-                <li><NuxtLink to="/articles">Articles</NuxtLink></li>
+                <li><NuxtLink to="/">{{ $t('Home') }}</NuxtLink></li>
+                <li><NuxtLink to="/articles">{{ $t('Articles') }}</NuxtLink></li>
                 <li v-if="!pendingHeader">
                     {{ header.properties.Title.title[0].text.content }}
                 </li>

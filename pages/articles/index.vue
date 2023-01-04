@@ -2,8 +2,8 @@
     <div class="mx-0 max-w-full">
         <div class="breadcrumbs text-sm">
             <ul>
-                <li><NuxtLink to="/">Main page</NuxtLink></li>
-                <li><NuxtLink to="/articles">Articles</NuxtLink></li>
+                <li><NuxtLink to="/">{{ $t('Home') }}</NuxtLink></li>
+                <li><NuxtLink to="/articles">{{ $t('Articles') }}</NuxtLink></li>
             </ul>
         </div>
 

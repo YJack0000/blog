@@ -22,38 +22,8 @@
                     tabindex="0"
                     class="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 text-base-content shadow"
                 >
-                    <li v-for="link in middleLinks">
-                        <NuxtLink
-                            :to="link.link"
-                            v-if="link.children"
-                            tabindex="0"
-                            class="justify-between"
-                            >{{ link.name
-                            }}<svg
-                                class="fill-current"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
-                                /></svg
-                        ></NuxtLink>
-                        <ul
-                            v-if="link.children"
-                            class="menu rounded-box border bg-base-100 p-2 shadow"
-                        >
-                            <li v-for="child in link.children">
-                                <NuxtLink :to="child.link">{{
-                                    child.name
-                                }}</NuxtLink>
-                            </li>
-                        </ul>
-                        <NuxtLink :to="link.link" v-else>{{
-                            link.name
-                        }}</NuxtLink>
-                    </li>
+                    <li><NuxtLink to="/">{{ $t('Home') }}</NuxtLink></li>
+                    <li><NuxtLink to="/articles">{{ $t('Articles') }}</NuxtLink></li>
                 </ul>
             </div>
             <NuxtLink to="/" class="btn-ghost btn text-xl normal-case"
@@ -62,32 +32,8 @@
         </div>
         <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal p-0">
-                <li v-for="link in middleLinks">
-                    <NuxtLink :to="link.link" v-if="link.children" tabindex="0"
-                        >{{ link.name
-                        }}<svg
-                            class="fill-current"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
-                            /></svg
-                    ></NuxtLink>
-                    <ul
-                        v-if="link.children"
-                        class="menu rounded-box border bg-base-100 p-2 text-base-content shadow"
-                    >
-                        <li v-for="child in link.children">
-                            <NuxtLink :to="child.link">{{
-                                child.name
-                            }}</NuxtLink>
-                        </li>
-                    </ul>
-                    <NuxtLink :to="link.link" v-else>{{ link.name }}</NuxtLink>
-                </li>
+                <NuxtLink to="/">{{ $t('Home') }}</NuxtLink>
+                <NuxtLink to="/articles">{{ $t('Articles') }}</NuxtLink>
             </ul>
         </div>
         <div class="navbar-end">
@@ -115,22 +61,9 @@
                     <li @click="$i18n.locale = 'zhTW'"><a>繁體中文</a></li>
                 </ul>
             </div>
-            <NuxtLink class="btn-neutral btn" :to="'/contact'">{{
-                $t('contact')
-            }}</NuxtLink>
+            <NuxtLink class="btn-neutral btn" :to="'/about'">
+                {{ $t('About') }}
+            </NuxtLink>
         </div>
     </div>
 </template>
-
-<script setup>
-const middleLinks = ref([
-    {
-        name: 'Home',
-        link: '/',
-    },
-    {
-        name: 'Articles',
-        link: '/articles',
-    },
-])
-</script>

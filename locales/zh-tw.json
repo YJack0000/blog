@@ -1,7 +1,9 @@
 {
     "hero": "歡迎來到我的個人網站",
     "heroDescription": "這是一個用 Nuxt.js + Tailwindcss、Notion 作為資料庫放、Vercel 作為部署平台的個人部落格。",
-    "contact": "聯絡方式",
+    "About": "關於我",
     "Categories": "分類",
-    "LOADMORE": "載入更多"
+    "LOADMORE": "載入更多",
+    "Home": "主頁",
+    "Articles": "文章"
 }
