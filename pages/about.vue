@@ -12,7 +12,7 @@
         </div>
         <div class="prose mt-12 max-w-none">
             <h2>{{ $t('about.About Me') }}</h2>
-            <p>{{ $t('about me content') }}</p>
+            <p>{{ $t('about.about me content') }}</p>
             <h3>{{ $t('about.Experience') }}</h3>
             <ul>
                 <li>{{ $t('about.Lary Technology') }}</li>
