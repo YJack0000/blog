@@ -20,10 +20,14 @@
                 </label>
                 <ul
                     tabindex="0"
-                    class="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 text-base-content shadow"
+                    class="menu rounded-box border bg-base-100 p-2 shadow"
                 >
-                    <li><NuxtLink to="/">{{ $t('Home') }}</NuxtLink></li>
-                    <li><NuxtLink to="/articles">{{ $t('Articles') }}</NuxtLink></li>
+                    <li>
+                        <NuxtLink to="/">{{ $t('') }}</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="/articles">{{ $t('Articles') }}</NuxtLink>
+                    </li>
                 </ul>
             </div>
             <NuxtLink to="/" class="btn-ghost btn text-xl normal-case"
@@ -32,8 +36,8 @@
         </div>
         <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal p-0">
-                <li><NuxtLink to="/">{{ $t('Home') }}</NuxtLink></li>
-                <li><NuxtLink to="/articles">{{ $t('Articles') }}</NuxtLink></li>
+                <NuxtLink to="/">{{ $t('') }}</NuxtLink>
+                <NuxtLink to="/articles">{{ $t('Articles') }}</NuxtLink>
             </ul>
         </div>
         <div class="navbar-end">

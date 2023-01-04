@@ -1,9 +1,23 @@
 {
     "hero": "歡迎來到我的個人網站",
-    "heroDescription": "這是一個用 Nuxt.js + Tailwindcss、Notion 作為資料庫放、Vercel 作為部署平台的個人部落格。",
+    "heroDescription": "這是一個用 Nuxt.js + Tailwindcss、Notion 作為資料庫、Vercel 作為部署平台的個人部落格。",
     "About": "關於我",
     "Categories": "分類",
     "LOADMORE": "載入更多",
     "Home": "主頁",
-    "Articles": "文章"
+    "Articles": "文章",
+    "about": {
+        "About Me": "關於我",
+        "about me content": "啦啦啦啦啦啦之後再寫啦",
+        "Experience": "經歷",
+        "Lary Technology": "2021 - 2022 / 賴瑞科技 / 產品設計與開發工程師",
+        "Projects": "專案",
+        "Awards": "獎項",
+        "icpc2022": "2022 / 國際大學生程式設計競賽 - 台北站（代表政大）",
+        "icpc2021": "2021 / 國際大學生程式設計競賽 - 台北站（代表政大）",
+        "niag": "2019 全國大專盃男子銳劍銅牌（代表政大）",
+        "Education": "學歷",
+        "nycu": "(2023 ~) / 國立陽明交通大學 / 資訊工程研究所",
+        "nccu": "2019 ~ 2022 / 國立政治大學 / 資訊科學系"
+    }
 }

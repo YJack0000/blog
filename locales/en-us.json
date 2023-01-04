@@ -5,5 +5,19 @@
     "Categories": "Categories",
     "LOADMORE": "LOADMORE",
     "Home": "Home",
-    "Articles": "Articles"
+    "Articles": "Articles",
+    "about": {
+        "About Me": "About Me",
+        "about me content": "lalalalala",
+        "Experience": "Experience",
+        "Lary Technology": "2021-2022 / Lary Technology / Product Designer and Development Engineer",
+        "Projects": "Projects",
+        "Awards": "Award",
+        "icpc2022": "2022 / International Collegiate Programming Contest - Asia Taipei (Represent NCCU)",
+        "icpc2021": "2021 / International Collegiate Programming Contest - Aisa Taipei (Represent NCCU)",
+        "niag": "2019 National Intercollegiate Athletic Games / Individual Men's epee Bronze Medal (Represent NCCU)",
+        "Education": "Education",
+        "nycu": "2023 ~ / National Yang Ming Chiao Tung University / Institute of Computer Science and Engineering",
+        "nccu": "2019 - 2022 / National Chengchi University / Department of Computer Science"
+    }
 }
