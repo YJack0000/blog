@@ -2,17 +2,28 @@
     <div>
         <!-- Built-in Header -->
         <Header
-            class="absolute bg-transparent align-top text-neutral-content z-10"
+            class="absolute z-10 bg-transparent align-top text-neutral-content"
         />
-        <div
-            id="background"
-            class="items-top hero h-screen z-0"
-        >
-            <div class="hero-overlay bg-opacity-60 z-10"></div>
-            <div class="hero-content text-center text-neutral-content z-20">
+        <div id="background" class="items-top hero z-0 h-screen">
+            <div class="hero-overlay z-10 bg-opacity-60"></div>
+            <div class="hero-content z-20 text-center text-neutral-content">
                 <div class="max-w-lg">
-                    <h1 class="mb-5 text-5xl font-bold">{{ $t('hero') }}</h1>
-                    <p class="mb-5">
+                    <h1
+                        class="mb-5 text-5xl font-bold transition-opacity duration-700 ease-in"
+                        :class="{
+                            'opacity-100': isHero,
+                            'opacity-0': !isHero,
+                        }"
+                    >
+                        {{ $t('hero') }}
+                    </h1>
+                    <p
+                        class="mb-5 transition-opacity duration-700 ease-in"
+                        :class="{
+                            'opacity-100': isContent,
+                            'opacity-0': !isContent,
+                        }"
+                    >
                         {{ $t('heroDescription') }}
                     </p>
                 </div>
@@ -25,6 +36,15 @@
 definePageMeta({
     layout: 'landing',
 })
+
+const isHero = ref(false)
+const isContent = ref(false)
+setTimeout(() => {
+    isHero.value = true
+    setTimeout(() => {
+        isContent.value = true
+    }, 700)
+}, 100)
 
 onMounted(() => {
     VANTA.WAVES({
@@ -39,3 +59,9 @@ onMounted(() => {
     })
 })
 </script>
+
+<style>
+canvas {
+    filter: blur(3px);
+}
+</style>
