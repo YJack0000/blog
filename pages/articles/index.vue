@@ -7,8 +7,8 @@
             </ul>
         </div>
 
-        <div class="block lg:flex lg:flex-row-reverse lg:gap-2">
-            <aside class="w-full lg:max-w-sm">
+        <div class="block md:flex md:flex-row-reverse md:gap-2">
+            <aside class="w-full md:w-1/4">
                 <BlogCategoryBox :selectedCategories="selectedCategories" />
             </aside>
             <div class="flex-1 divide-y divide-base-200">
