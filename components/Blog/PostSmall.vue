@@ -1,6 +1,8 @@
 <template>
     <div
-        class="grid cursor-pointer grid-cols-5 gap-2 rounded py-8 transition hover:bg-neutral-focus">
+        class="grid cursor-pointer grid-cols-5 gap-2 rounded py-8 transition hover:bg-neutral-focus"
+        @click="useRouter().push(`/articles/post/${post.id}`)"
+    >
         <div class="col-span-5 mb-2 flex lg:hidden">
             <img
                 v-if="post.cover"
