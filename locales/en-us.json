@@ -1,0 +1,7 @@
+{
+    "hero": "Welcome to my blog",
+    "heroDescription": "This is a personal blog using Nuxt.js + Tailwindcss, Notion as the database, and Vercel as the deployment platform.",
+    "contact": "Contact",
+    "Categories": "Categories",
+    "LOADMORE": "LOADMORE"
+}
