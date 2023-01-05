@@ -49,6 +49,11 @@
 </template>
 
 <script setup>
+const title = ref('')
+useHead({
+    title: computed(() => title.value + " - YJ's Blog"),
+})
+
 const route = useRoute()
 const router = useRouter()
 
@@ -73,6 +78,7 @@ const {
 watch(header, (headerW) => {
     // Because count starts out null, you won't have access
     // to its contents immediately, but you can watch it.
+    title.value = headerW.properties.Title.title[0].text.content
 })
 watch(content, (contentW) => {
     // Because count starts out null, you won't have access

@@ -5,7 +5,8 @@
     </div>
 </template>
 <script setup>
+const { $i18nGlobal } = useNuxtApp()
 useHead({
-    title: 'YJack0000的筆記',
+    title: $i18nGlobal.t('Home') + ' - YJ\'s Blog',
 })
 </script>
