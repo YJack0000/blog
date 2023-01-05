@@ -49,51 +49,6 @@
 </template>
 
 <script setup>
-const title = ref('')
-const description = ref('')
-const image = ref('')
-useHead({
-    title: computed(() => title.value + " - YJ's Blog"),
-    // setting open graph tags
-    meta: [
-        {
-            hid: 'og:title',
-            property: 'og:title',
-            content: computed(() => title.value + " - YJ's Blog"),
-        },
-        {
-            hid: 'og:content',
-            property: 'og:content',
-            content: "article",
-        },
-        {
-            hid: 'og:description',
-            property: 'og:description',
-            content: computed(() => description.value),
-        },
-        {
-            hid: 'og:image',
-            property: 'og:image',
-            content: computed(() => image.value),
-        },
-        {
-            hid: 'twitter:title',
-            property: 'twitter:title',
-            content: computed(() => title.value + " - YJ's Blog"),
-        },
-        {
-            hid: 'twitter:description',
-            property: 'twitter:description',
-            content: computed(() => description.value),
-        },
-        {
-            hid: 'twitter:image',
-            property: 'twitter:image',
-            content: computed(() => image.value),
-        },
-    ],
-})
-
 const route = useRoute()
 const router = useRouter()
 
@@ -118,9 +73,6 @@ const {
 watch(header, (headerW) => {
     // Because count starts out null, you won't have access
     // to its contents immediately, but you can watch it.
-    title.value = headerW.properties.Title.title[0].text.content
-    description.value = headerW.properties.Description.rich_text[0].text.content
-    image.value = headerW.cover[headerW.cover.type].url
 })
 watch(content, (contentW) => {
     // Because count starts out null, you won't have access
