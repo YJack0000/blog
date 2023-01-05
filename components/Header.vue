@@ -63,7 +63,7 @@
                 </label>
                 <ul
                     tabindex="0"
-                    class="dropdown-content menu rounded-box w-52 bg-base-100 p-2 shadow"
+                    class="dropdown-content menu rounded-box w-36 bg-base-100 p-2 shadow"
                 >
                     <li @click="$i18n.locale = 'en'"><a>English</a></li>
                     <li @click="$i18n.locale = 'zh'"><a>繁體中文</a></li>
