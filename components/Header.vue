@@ -30,7 +30,7 @@
                     </li>
                 </ul>
             </div>
-            <NuxtLink to="/" class="btn-ghost btn text-xl normal-case"
+            <NuxtLink to="/" class="btn-ghost btn text-xl normal-case p-0 md:p-2"
                 >YJack0000 筆記</NuxtLink
             >
         </div>
