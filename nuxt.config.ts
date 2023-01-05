@@ -6,10 +6,10 @@ export default defineNuxtConfig({
     },
     app: {
         head: {
-            charset: 'utf-16',
-            viewport: 'width=500, initial-scale=1',
+            charset: 'utf-8',
+            viewport: 'width=device-width, initial-scale=1',
             title: "YJack0000's blog",
-            meta: [{ name: 'description', content: 'My site.' }],
+            meta: [{ name: 'description', content: 'YJack0000\'s site.' }],
             script: [
                 // import for vanta background
                 // { src: 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js' },
