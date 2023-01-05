@@ -65,7 +65,7 @@ useHead({
             hid: 'og:content',
             property: 'og:content',
             content: "article",
-        }
+        },
         {
             hid: 'og:description',
             property: 'og:description',
