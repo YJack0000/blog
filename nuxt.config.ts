@@ -12,8 +12,8 @@ export default defineNuxtConfig({
             meta: [{ name: 'description', content: 'My site.' }],
             script: [
                 // import for vanta background
-                { src: 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js' },
-                { src: 'https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js' },
+                // { src: 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js' },
+                // { src: 'https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js' },
             ],
         },
         pageTransition: { name: 'page', mode: 'out-in' }
