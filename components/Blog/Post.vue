@@ -6,7 +6,7 @@
                 v-if="header.cover"
                 class="w-full h-64 object-cover rounded-box mt-2 mb-4"
                 :src="header.cover[header.cover.type].url"
-                alt="zdjęcie posta"
+                alt="photo of the post"
             />
             <div v-else></div>
         </div>
@@ -30,7 +30,7 @@
             >
                 <div class="avatar">
                     <div class="w-6 rounded">
-                        <img :src="author.avatar_url" />
+                        <img :src="author.avatar_url" alt="author avatar" />
                     </div>
                 </div>
                 {{ author.name }}
@@ -66,7 +66,7 @@ const publishedAtReadable = computed(() => {
         let date = new Date(
             props.header.properties.Date[
                 props.header.properties.Date.type
-            ].start
+            ].start,
         )
         return date.toLocaleString('zh-TW')
     } else return '?'

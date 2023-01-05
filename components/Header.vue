@@ -22,8 +22,12 @@
                     tabindex="0"
                     class="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 text-base-content shadow"
                 >
-                    <li><NuxtLink to="/">{{ $t('Home') }}</NuxtLink></li>
-                    <li><NuxtLink to="/articles">{{ $t('Articles') }}</NuxtLink></li>
+                    <li>
+                        <NuxtLink to="/">{{ $t('Home') }}</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="/articles">{{ $t('Articles') }}</NuxtLink>
+                    </li>
                 </ul>
             </div>
             <NuxtLink to="/" class="btn-ghost btn text-xl normal-case"
@@ -32,8 +36,12 @@
         </div>
         <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal p-0">
-                <li><NuxtLink to="/">{{ $t('Home') }}</NuxtLink></li>
-                <li><NuxtLink to="/articles">{{ $t('Articles') }}</NuxtLink></li>
+                <li>
+                    <NuxtLink to="/">{{ $t('Home') }}</NuxtLink>
+                </li>
+                <li>
+                    <NuxtLink to="/articles">{{ $t('Articles') }}</NuxtLink>
+                </li>
             </ul>
         </div>
         <div class="navbar-end">
@@ -57,8 +65,8 @@
                     tabindex="0"
                     class="dropdown-content menu rounded-box w-52 bg-base-100 p-2 shadow"
                 >
-                    <li @click="$i18n.locale = 'enUS'"><a>English</a></li>
-                    <li @click="$i18n.locale = 'zhTW'"><a>繁體中文</a></li>
+                    <li @click="$i18n.locale = 'en'"><a>English</a></li>
+                    <li @click="$i18n.locale = 'zh'"><a>繁體中文</a></li>
                 </ul>
             </div>
             <NuxtLink class="btn-neutral btn" :to="'/about'">

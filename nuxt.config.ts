@@ -16,6 +16,5 @@ export default defineNuxtConfig({
                 // { src: 'https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js' },
             ],
         },
-        pageTransition: { name: 'page', mode: 'out-in' }
     },
 })

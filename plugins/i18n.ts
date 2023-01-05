@@ -1,17 +1,23 @@
 import { createI18n } from 'vue-i18n'
-import enUS from '@/locales/en-us.json'
-import zhTW from '@/locales/zh-tw.json'
+import zh from '@/locales/zh-tw.json'
+import en from '@/locales/en-us.json'
 
 export default defineNuxtPlugin(({ vueApp }) => {
     const i18n = createI18n({
         legacy: false,
         globalInjection: true,
-        locale: 'zhTW',
+        locale: 'zh',
         messages: {
-            enUS,
-            zhTW,
+            zh,
+            en,
         },
     })
 
     vueApp.use(i18n)
+
+    return {
+        provide: {
+            i18nGlobal: i18n.global,
+        },
+    }
 })

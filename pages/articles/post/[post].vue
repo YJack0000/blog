@@ -2,8 +2,12 @@
     <div>
         <div class="text-sm breadcrumbs">
             <ul>
-                <li><NuxtLink to="/">{{ $t('Home') }}</NuxtLink></li>
-                <li><NuxtLink to="/articles">{{ $t('Articles') }}</NuxtLink></li>
+                <li>
+                    <NuxtLink to="/">{{ $t('Home') }}</NuxtLink>
+                </li>
+                <li>
+                    <NuxtLink to="/articles">{{ $t('Articles') }}</NuxtLink>
+                </li>
                 <li v-if="!pendingHeader">
                     {{ header.properties.Title.title[0].text.content }}
                 </li>
@@ -54,7 +58,7 @@ const {
     refresh: refreshHeader,
     error: errorHeader,
 } = await useLazyAsyncData('header', () =>
-    $fetch(`/api/notion/retrieve-page/${route.params.post}`)
+    $fetch(`/api/notion/retrieve-page/${route.params.post}`),
 )
 
 const {
@@ -63,7 +67,7 @@ const {
     refresh: refreshContent,
     error: errorContent,
 } = await useLazyAsyncData('content', () =>
-    $fetch(`/api/notion/retrieve-block-children/${route.params.post}`)
+    $fetch(`/api/notion/retrieve-block-children/${route.params.post}`),
 )
 
 watch(header, (headerW) => {

@@ -25,7 +25,9 @@ export default defineEventHandler((event) => {
         ],
         page_size: 3,
         start_cursor:
-            query.cursor && query.cursor !== "undefined" ? query.cursor.toString() : undefined,
+            query.cursor && query.cursor !== 'undefined'
+                ? query.cursor.toString()
+                : undefined,
     })
 
     return response

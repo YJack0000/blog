@@ -36,7 +36,7 @@
 const props = defineProps(['selectedCategories'])
 
 const { pending, data: categories } = useLazyAsyncData('categories', () =>
-    $fetch(`/api/notion/retrieve-database`)
+    $fetch(`/api/notion/retrieve-database`),
 )
 
 const selectCategory = (id) => {

@@ -11,6 +11,6 @@
 <script setup>
 const props = defineProps(['block'])
 const { data: header } = await useFetch(
-    `/api/notion/retrieve-page/${props.block.id}`
+    `/api/notion/retrieve-page/${props.block.id}`,
 )
 </script>

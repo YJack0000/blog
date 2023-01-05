@@ -7,3 +7,11 @@
         <Footer />
     </div>
 </template>
+<script setup>
+const { $i18nGlobal } = useNuxtApp()
+useHead({
+    htmlAttrs: {
+        lang: $i18nGlobal.locale,
+    },
+})
+</script>

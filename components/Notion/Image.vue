@@ -1,7 +1,11 @@
 <template>
     <div class="flex flex-col">
         <label :for="block.id" class="modal-button cursor-pointer not-prose">
-            <img :src="block.image[block.image.type].url" class="mb-0" />
+            <img
+                :src="block.image[block.image.type].url"
+                class="mb-0"
+                alt="block image"
+            />
         </label>
         <div
             v-if="block.image.caption"
@@ -16,7 +20,11 @@
                 class="modal-box relative max-w-4xl not-prose flex flex-col items-center"
                 for=""
             >
-                <img :src="block.image[block.image.type].url" class="mb-0" />
+                <img
+                    :src="block.image[block.image.type].url"
+                    class="mb-0"
+                    alt="block img"
+                />
                 <div
                     v-if="block.image.caption"
                     class="text-md font-normal text-center mt-1"

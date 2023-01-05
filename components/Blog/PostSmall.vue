@@ -8,7 +8,7 @@
                 v-if="post.cover"
                 class="rounded-box h-24 w-full object-cover"
                 :src="post.cover[post.cover.type].url"
-                alt="zdjęcie posta"
+                alt="photo of the post"
             />
             <div
                 v-else
@@ -22,7 +22,7 @@
             >
                 <div class="avatar">
                     <div class="w-6 rounded">
-                        <img :src="author.avatar_url" />
+                        <img :src="author.avatar_url" alt="author avatar" />
                     </div>
                 </div>
                 {{ author.name }}
@@ -63,7 +63,7 @@
                 v-if="post.cover"
                 class="rounded-box h-24 w-24 object-cover"
                 :src="post.cover[post.cover.type].url"
-                alt="zdjęcie posta"
+                alt="photo of the post"
             />
             <div
                 v-else

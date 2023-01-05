@@ -1,7 +1,7 @@
 <script setup>
 const props = defineProps(['pageid'])
 const { data: content } = await useFetch(
-    `/api/notion/retrieve-block-children/${props.pageid}`
+    `/api/notion/retrieve-block-children/${props.pageid}`,
 )
 </script>
 
