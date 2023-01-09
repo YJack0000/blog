@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="text-sm breadcrumbs">
+        <div class="breadcrumbs text-sm">
             <ul>
                 <li>
                     <NuxtLink to="/">{{ $t('Home') }}</NuxtLink>
@@ -8,7 +8,7 @@
                 <li>
                     <NuxtLink to="/articles">{{ $t('Articles') }}</NuxtLink>
                 </li>
-                <li v-if="!pendingHeader">
+                <li>
                     {{ header.properties.Title.title[0].text.content }}
                 </li>
             </ul>
@@ -37,7 +37,7 @@
                             Oops! This article doesn't exist or has been
                             deleted.
                         </p>
-                        <button class="btn btn-neutral btn-sm" @click="goBack">
+                        <button class="btn-neutral btn-sm btn" @click="goBack">
                             &lArr; Go back
                         </button>
                     </div>
@@ -52,14 +52,44 @@
 const route = useRoute()
 const router = useRouter()
 
+// fetch header first to get title, description and cover
+// and make og: for the post's website
 const {
     data: header,
     pending: pendingHeader,
-    refresh: refreshHeader,
     error: errorHeader,
-} = await useLazyAsyncData('header', () =>
-    $fetch(`/api/notion/retrieve-page/${route.params.post}`),
-)
+} = await useLazyFetch(`/api/notion/retrieve-page/${route.params.post}`)
+
+useHead({
+    title: `${header.value?.properties.Title.title[0].text.content} - YJ's Blog`,
+    meta: [
+        {
+            hid: 'description',
+            name: 'description',
+            content: header.value?.properties.Description.rich_text[0].plain_text,
+        },
+        {
+            hid: "og:description",
+            property: "og:description",
+            content: header.value?.properties.Description.rich_text[0].plain_text,
+        },
+        {
+            hid: "og:title",
+            property: "og:title",
+            content: `${header.value?.properties.Title.title[0].text.content} - YJ's Blog`,
+        },
+        {
+            hid: "og:type",
+            property: "og:type",
+            content: "article",
+        },
+        {
+            hid: "og:image",
+            property: "og:image",
+            content: header.value?.cover ? header.value?.cover[header.value?.cover.type].url : "/img/og.png",
+        },
+    ],
+})
 
 const {
     data: content,
@@ -70,10 +100,6 @@ const {
     $fetch(`/api/notion/retrieve-block-children/${route.params.post}`),
 )
 
-watch(header, (headerW) => {
-    // Because header starts out null, you won't have access
-    // to its contents immediately, but you can watch it.
-})
 watch(content, (contentW) => {
     // Because contentW starts out null, you won't have access
     // to its contents immediately, but you can watch it.
@@ -81,6 +107,6 @@ watch(content, (contentW) => {
 const goBack = () => {
     router.go(-1)
 }
-refreshHeader()
+
 refreshContent()
 </script>

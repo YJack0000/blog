@@ -9,14 +9,16 @@ export default defineNuxtConfig({
             htmlAttrs: {
                 lang: 'zh',
             },
+            link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
             charset: 'utf-8',
             viewport: 'width=device-width, initial-scale=1',
-            title: "YJ's blog",
-            meta: [{ name: 'description', content: "YJack0000's site." }],
-            script: [
-                // import for vanta background
-                // { src: 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js' },
-                // { src: 'https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js' },
+            title: "YJack's Site.",
+            meta: [
+                {
+                    name: 'description',
+                    content:
+                        '這是一個用 Nuxt.js + Tailwindcss、Notion 作為資料庫、Vercel 作為部署平台的個人網站。用來存放 YJack0000 的文章與個人資料。',
+                },
             ],
         },
     },
