@@ -36,14 +36,14 @@
                 />
                 <!-- Post placeholder -->
                 <BlogPostSmallPlaceholder
-                    v-else-if="pending"
+                    v-if="pending"
                     v-for="el in [1, 2, 3]"
                 />
                 <button
                     class="btn-primary btn-block btn"
                     :class="{ loading: pending }"
                     @click="loadMore"
-                    :disabled="pending || !postsFromNotion.has_more"
+                    :disabled="pending || !hasMore"
                 >
                     <span>{{ $t('LOADMORE') }}</span>
                 </button>
@@ -53,34 +53,15 @@
 </template>
 
 <script setup>
-// Articles save to storage so during routing you dont lose articles from last API calls
-import { postsToRemain } from '~/store/articles.js'
-
-// API Cursor for getting next articles
-const cursor = ref(undefined)
-
-// Filter by category
-const selectedCategories = ref(new Set())
-
-// Async fetching
-const {
+const { 
     pending,
-    data: postsFromNotion,
-    refresh,
-} = useLazyAsyncData('postsFromNotion', () =>
-    $fetch(`/api/notion/query-database?cursor=${cursor.value}`),
-)
-watch(postsFromNotion, (postsFromNotionW) => {})
+    postsToRemain,
+    postsFromNotion,
+    hasMore,
+    loadMore,
+} = usePosts()
 
-// Load more articles (button push)
-const loadMore = () => {
-    postsToRemain.value = [
-        ...postsToRemain.value,
-        ...postsFromNotion.value.results,
-    ]
-    cursor.value = postsFromNotion.value.next_cursor
-    refresh()
-}
+const selectedCategories = ref(new Set())
 
 // Filtered posts triggered by category select
 const filteredPosts = computed(() => {

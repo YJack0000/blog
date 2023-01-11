@@ -58,7 +58,7 @@ const {
     data: header,
     pending: pendingHeader,
     error: errorHeader,
-} = await useLazyFetch(`/api/notion/retrieve-page/${route.params.post}`)
+} = await useFetch(`/api/notion/retrieve-page/${route.params.post}`)
 
 useHead({
     title: `${header.value?.properties.Title.title[0].text.content} - YJ's Blog`,
