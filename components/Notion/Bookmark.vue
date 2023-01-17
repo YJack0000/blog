@@ -36,5 +36,5 @@ const props = defineProps(['block'])
 const url = encodeURIComponent(props.block[props.block.type].url)
 const { data: og, pending, error } = await useLazyFetch(`/api/og/${url}`)
 
-console.log(og)
+// console.log(og)
 </script>

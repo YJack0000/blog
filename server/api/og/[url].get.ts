@@ -27,7 +27,7 @@ export default defineEventHandler(async (event) => {
             //  To work, you must use bracket "[]" notation instead of dots.
             ret.set(propName, ogMetaValue)
 
-            console.log(ret)
+            // console.log(ret)
         }
     })
 
