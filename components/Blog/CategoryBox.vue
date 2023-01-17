@@ -6,7 +6,7 @@
                 v-if="!pending"
                 v-for="category in categories.properties.Category.multi_select
                     .options"
-                class="btn btn-xs"
+                class="btn btn-md"
                 :class="{ 'btn-primary': selectedCategories.has(category.id) }"
                 @click="selectCategory(category.id)"
             >
@@ -26,7 +26,7 @@
                     'w-12',
                 ]"
                 :class="categoryPlaceholder"
-                class="btn btn-xs btn-outline overflow-hidden relative"
+                class="btn btn-md btn-outline overflow-hidden relative"
             ></span>
         </div>
     </div>
