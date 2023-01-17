@@ -1,30 +1,30 @@
 <template>
     <NuxtLink
         :to="block[block.type].url"
-        class="flex link-hover rounded-box flex-row items-center gap-2 px-4 py-4 hover:border hover:border-primary border border-neutral"
+        class="block grow text-inherit no-underline"
     >
         <div
-            class="bg-base-200 rounded-box w-12 h-12 flex items-center justify-center"
+            class="relative flex w-full cursor-pointer select-none flex-wrap-reverse items-stretch overflow-hidden rounded border border-slate-700 bg-base-100 fill-inherit text-left text-inherit hover:bg-base-200"
         >
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-                class="fill-current w-6 h-6"
-            >
-                <path
-                    d="M384 320c-17.67 0-32 14.33-32 32v96H64V160h96c17.67 0 32-14.32 32-32s-14.33-32-32-32L64 96c-35.35 0-64 28.65-64 64V448c0 35.34 28.65 64 64 64h288c35.35 0 64-28.66 64-64v-96C416 334.3 401.7 320 384 320zM488 0H352c-12.94 0-24.62 7.797-29.56 19.75c-4.969 11.97-2.219 25.72 6.938 34.88L370.8 96L169.4 297.4c-12.5 12.5-12.5 32.75 0 45.25C175.6 348.9 183.8 352 192 352s16.38-3.125 22.62-9.375L416 141.3l41.38 41.38c9.156 9.141 22.88 11.84 34.88 6.938C504.2 184.6 512 172.9 512 160V24C512 10.74 501.3 0 488 0z"
-                />
-            </svg>
-        </div>
-        <div>
-            <div><NotionRichText :richText="block[block.type].caption" /></div>
-            <div
-                class="text-sm"
-                :class="{
-                    'text-sm': block[block.type].caption.length != 0,
-                }"
-            >
-                {{ block[block.type].url }}
+            <div class="shrink grow-[4] basis-44 overflow-hidden p-4 pt-3">
+                <div
+                    class="overflow-hidden text-ellipsis whitespace-nowrap text-lg"
+                >
+                    {{ og.title }}
+                </div>
+                <div class="h-10 overflow-hidden text-sm text-secondary">
+                    {{ og.description }}
+                </div>
+            </div>
+            <div class="relative block shrink grow basis-44">
+                <div class="absolute inset-0">
+                    <div class="h-full w-full bg-base-200">
+                        <img
+                            :src="og.image"
+                            class="m-0 h-full w-full object-cover"
+                        />
+                    </div>
+                </div>
             </div>
         </div>
     </NuxtLink>
@@ -32,4 +32,9 @@
 
 <script setup>
 const props = defineProps(['block'])
+
+const url = encodeURIComponent(props.block[props.block.type].url)
+const { data: og, pending, error } = await useLazyFetch(`/api/og/${url}`)
+
+console.log(og)
 </script>
