@@ -65,8 +65,8 @@
                     tabindex="0"
                     class="dropdown-content menu rounded-box w-36 bg-base-100 p-2 shadow"
                 >
-                    <li @click="$i18n.locale = 'en'"><a>English</a></li>
-                    <li @click="$i18n.locale = 'zh'"><a>繁體中文</a></li>
+                    <li @click="$i18n.locale = 'en'"><a href="">English</a></li>
+                    <li @click="$i18n.locale = 'zh'"><a href="">繁體中文</a></li>
                 </ul>
             </div>
             <NuxtLink class="btn-neutral btn" :to="'/about'">
