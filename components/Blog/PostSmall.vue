@@ -3,7 +3,7 @@
         class="grid cursor-pointer grid-cols-5 gap-2 rounded py-8 transition hover:bg-neutral-focus"
         @click="useRouter().push(`/articles/post/${post.id}`)"
     >
-        <div class="col-span-5 mb-2 flex lg:hidden">
+        <!-- <div class="col-span-5 mb-2 flex lg:hidden">
             <img
                 v-if="post.cover"
                 class="rounded-box h-24 w-full object-cover"
@@ -14,7 +14,7 @@
                 v-else
                 class="rounded-box relative h-24 w-24 overflow-hidden border-base-300 bg-base-200"
             ></div>
-        </div>
+        </div> -->
         <div class="col-span-5 flex items-center gap-2 text-sm">
             <div
                 class="flex items-center gap-2"
@@ -56,7 +56,7 @@
                 </span>
             </div>
         </div>
-        <div
+        <!-- <div
             class="col-span-1 hidden items-center justify-end lg:flex lg:justify-center"
         >
             <img
@@ -69,7 +69,7 @@
                 v-else
                 class="rounded-box relative h-24 w-24 overflow-hidden border-base-300 bg-base-200"
             ></div>
-        </div>
+        </div> -->
         <div class="col-span-5 flex flex-wrap items-center gap-2">
             <div
                 class="badge-neutral badge"
